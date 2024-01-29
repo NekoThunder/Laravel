@@ -86,6 +86,7 @@ class C_titles extends Controller
         $m_titles->tit_is_active = $tit_is_active;
         $m_titles->save();
         // use Illuminate\Support\Facades\Redirect;
+        
         return Redirect::to('/titles');
     }
 
@@ -97,6 +98,7 @@ class C_titles extends Controller
         //.
          $m_titles = M_titles::find($id);
          $m_titles->delete();
+
           return Redirect::to('/titles');
     }
 }
