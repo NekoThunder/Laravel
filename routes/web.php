@@ -1,7 +1,7 @@
 <!--
 Author      : Phurphat Khumsuan[Netkung]
 ID          : 65160096
-Workshop    : #6
+Workshop    : #7
 -->
 
 <?php
@@ -40,34 +40,47 @@ Route::middleware('auth')->group(function(){});
 
 
 Route::resource('titles', C_titles::class);
+Route::middleware('auth')->group(function(){
+
+    // auth first
+    
+});
 
 Route::get('/my-controller', [MyController::class, 'index']);
 
 Route::get('/my-controller2', 'App\Http\Controllers\MyController@index');
 Route::namespace('App\Http\Controllers')->group(function(){
+
     Route::get('/my-controller3', 'MyController@index');
     Route::post('/my-controller3-post', 'MyController@store');
+
 });
 
 Route::resource('/my-controller4', MyController::class);
 
 
 Route::get('/', function () {
+
     return view('welcome'); // welcome.blade.php
+
 });
 
 // use Illuminate\Http\Request;
 
 Route::get('/my-route', function(){
+
     // return view('myroute');
     //        Key    =>  Value
     $data = ['val_a' => 'Hello World!'];
     $data['val_b'] = "Laravel";
     return view('myfolder.mypage',$data);
+
 });
 
 
 Route::post('/my-route', function(Request $req){
+
     $data['myinput'] =  $req->input('myinput');
     return view('myroute', $data);
+
 });

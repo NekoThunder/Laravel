@@ -249,7 +249,7 @@
                     <div class="image">
                         <img src="{{ url('assets/dist/img/LogOut.jpg') }}" class="img-circle elevation-2"
                             alt="User Image">
-                    </div>
+                    </div class>
                     <li class="nav-item d-none d-sm-inline-block">
                         <a href="http://127.0.0.1:8000/login" class="nav-link">Log Out</a>
                     </li>
